@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 23
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 60
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -334,22 +334,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Models/prezesi/kart
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets
+  - Assets/Models/prezesi/kart
   m_LastFoldersGridSize: 46
-  m_LastProjectPath: C:\Users\Mateusz\Documents\GitHub\Fest-PP-Projekt\Fest PP Projekt
+  m_LastProjectPath: C:\Users\janpo\Documents\GitHub\Ostry-Zgon\Fest PP Projekt
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: a06a0000
-    m_LastClickedID: 27296
-    m_ExpandedIDs: 00000000a06a000000ca9a3bffffff7f
+    m_SelectedIDs: 6c6d0000
+    m_LastClickedID: 28012
+    m_ExpandedIDs: 00000000ae6c0000b86c0000226d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a06a0000
+    m_ExpandedIDs: 00000000ae6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -783,9 +783,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.9783096, y: -0.36727527, z: -85.48314}
+    m_Target: {x: 36.027287, y: 9.9807205, z: 9.1483755}
     speed: 2
-    m_Value: {x: 7.9783096, y: -0.36727527, z: -85.48314}
+    m_Value: {x: 36.027287, y: 9.9807205, z: 9.1483755}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0.25, y: 0.25}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -832,13 +832,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.08326892, y: -0.68876183, z: 0.0801167, w: 0.7157434}
+    m_Target: {x: 0.019394092, y: -0.91497165, z: 0.04422738, w: 0.4007165}
     speed: 2
-    m_Value: {x: 0.08326751, y: -0.68875015, z: 0.08011534, w: 0.7157313}
+    m_Value: {x: 0.019525915, y: -0.9137293, z: 0.044167254, w: 0.4034437}
   m_Size:
-    m_Target: 10.45
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 10.45
+    m_Value: 0.8660256
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -935,23 +935,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 766d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 38fbffff
+      m_ExpandedIDs: 30d2ffffa6f5ffffe2600000c0610000d4610000c86500004a6b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: morda (7)
+        m_OriginalName: morda (7)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -30482
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
