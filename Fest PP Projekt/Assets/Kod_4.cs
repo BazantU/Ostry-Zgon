@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Kod_4 : MonoBehaviour
 {
@@ -12,12 +13,28 @@ public class Kod_4 : MonoBehaviour
     public Material tlo;
     public float odleglosc;
     public int prawidlowy_kod;
+    public Transform zawias;
+    public GameObject glowna_kamera;
+    public GameObject kamera_koniec;
+    public Transform gracz_model;
+    public TMP_Text koniec;
     //public Transform zawias;
 
     private bool mozna_wpisac = true;
     private Color poczatkowy_kolor = new Color(93f/255f, 207f/255f, 255f/255f);
     private string kod = "";
     private float poczatkowy_x;
+
+    private void info_koniec()
+    {
+        koniec.enabled = true;
+    }
+
+    private void The_End()
+    { 
+        DOTween.Init();
+        kamera_koniec.transform.DOLocalMoveZ(-92.5f, 14f).OnComplete(info_koniec);
+    }
 
     private void powrot(Transform przycisk_0)
     {
@@ -32,6 +49,7 @@ public class Kod_4 : MonoBehaviour
 
     void Start()
     {   
+        kamera_koniec.SetActive(false);
         poczatkowy_x = kod_4_obiekt.Find("Przyciski").Find("0").localPosition.x;
         tekst.text = kod;
         DOTween.Init();
@@ -82,8 +100,12 @@ public class Kod_4 : MonoBehaviour
                         tekst.text = "";
                         DOTween.Init();
                         tlo.DOColor(Color.green, 0.5f);
-                        //DOTween.Init();
-                        //zawias.DOLocalRotate(new Vector3(0f, 127f, 0), 2f);
+
+                        glowna_kamera.SetActive(false); kamera_koniec.SetActive(true);
+                        gracz_model.localPosition = new Vector3(33.9778f, 9.325f, 14.828f);
+
+                        DOTween.Init();
+                        zawias.DOLocalRotate(new Vector3(0f, -39f, 0), 8f).OnComplete(The_End);
                     }
                     else
                     {
