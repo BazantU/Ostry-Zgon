@@ -12,6 +12,8 @@ public class Kamera : MonoBehaviour
 
     public MonitorInterakcja monitorSC;
     public CRTInterakcja monitorCRT;
+    public Laktok laktok;
+    public Kalendarz kalendarz;
 
     void Start()
     {
@@ -21,14 +23,16 @@ public class Kamera : MonoBehaviour
 
     void Update()
     {   
-        float mysz_Y = Input.GetAxis("Mouse Y") * sila * Time.deltaTime;
-        float mysz_X = Input.GetAxis("Mouse X") * sila * Time.deltaTime;
+        float mysz_Y = Input.GetAxis("Mouse Y") * sila; //* Time.deltaTime;
+        float mysz_X = Input.GetAxis("Mouse X") * sila; //* Time.deltaTime;
 
         rotacja_pionowa -= mysz_Y;
         rotacja_pionowa = Mathf.Clamp(rotacja_pionowa, -90f, 90f);
 
         if(monitorSC.interakcja == false
-        && monitorCRT.interakcja == false)
+        && monitorCRT.interakcja == false
+        && laktok.interakcja == false
+        && kalendarz.interakcja == false)
         {
             gracz.Rotate(Vector3.up * mysz_X);
             kamera_gracza.transform.localRotation = Quaternion.Euler(rotacja_pionowa, 0f, 0f);

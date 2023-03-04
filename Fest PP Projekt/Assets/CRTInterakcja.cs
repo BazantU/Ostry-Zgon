@@ -49,7 +49,6 @@ public class CRTInterakcja : MonoBehaviour
             item.GetComponent<Outline>().enabled = false;
             kamera_glowna.SetActive(false); kamera_monitor.SetActive(true);
             delay = 0;
-            print("debug");
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)

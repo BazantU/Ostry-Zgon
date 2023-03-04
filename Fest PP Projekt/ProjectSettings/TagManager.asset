@@ -9,6 +9,14 @@ TagManager:
   - Monitor
   - Kod
   - CRT
+  - Przycisk_Kod_2
+  - Przycisk_Kod_sejf
+  - Laktok
+  - Kalendarz
+  - Dzwignia
+  - Ksiazka
+  - Przycisk_Kod_3
+  - Przycisk_Kod_4
   layers:
   - Default
   - TransparentFX

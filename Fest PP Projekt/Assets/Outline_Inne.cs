@@ -10,6 +10,10 @@ public class Outline_Inne : MonoBehaviour
 
     public MonitorInterakcja monitorSC;
     public CRTInterakcja monitorCRT;
+    public Laktok laktok;
+    public Kalendarz kalendarz;
+    public Dzwignie dzwignie;
+    public Ksiazka ksiazka;
 
     void Update()
     {   
@@ -36,6 +40,50 @@ public class Outline_Inne : MonoBehaviour
             //CRT
             if(przedmiot.tag == "CRT"
                 && monitorCRT.interakcja == false)
+            {
+                przedmiot.GetComponent<Outline>().enabled = true;
+                if (!przedmioty_lista.Contains(przedmiot.gameObject))
+                {
+                    przedmioty_lista.Add(przedmiot.gameObject);
+                }
+            }
+
+            //Laktok
+            if(przedmiot.tag == "Laktok"
+                && laktok.interakcja == false)
+            {
+                przedmiot.GetComponent<Outline>().enabled = true;
+                if (!przedmioty_lista.Contains(przedmiot.gameObject))
+                {
+                    przedmioty_lista.Add(przedmiot.gameObject);
+                }
+            }
+
+            //Kalendarz
+            if(przedmiot.tag == "Kalendarz"
+                && kalendarz.interakcja == false)
+            {
+                przedmiot.GetComponent<Outline>().enabled = true;
+                if (!przedmioty_lista.Contains(przedmiot.gameObject))
+                {
+                    przedmioty_lista.Add(przedmiot.gameObject);
+                }
+            }
+
+            //Dzwignie
+            if(przedmiot.tag == "Dzwignia"
+            && dzwignie.dozwolona_interakcja == true)
+            {
+                przedmiot.GetComponent<Outline>().enabled = true;
+                if (!przedmioty_lista.Contains(przedmiot.gameObject))
+                {
+                    przedmioty_lista.Add(przedmiot.gameObject);
+                }
+            }
+
+            //Ksiazka
+            if(przedmiot.tag == "Ksiazka"
+            && ksiazka.otwarta == false)
             {
                 przedmiot.GetComponent<Outline>().enabled = true;
                 if (!przedmioty_lista.Contains(przedmiot.gameObject))

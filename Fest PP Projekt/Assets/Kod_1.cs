@@ -39,7 +39,7 @@ public class Kod_1 : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
         if(Input.GetMouseButtonDown(0))
         {   
             var ray = kamera_gracza.ScreenPointToRay(Input.mousePosition);

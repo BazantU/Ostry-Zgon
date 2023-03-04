@@ -13,6 +13,8 @@ public class Ruch : MonoBehaviour
 
     public MonitorInterakcja monitorSC;
     public CRTInterakcja monitorCRT;
+    public Laktok laktok;
+    public Kalendarz kalendarz;
 
     void Update()
     {
@@ -32,7 +34,9 @@ public class Ruch : MonoBehaviour
         Vector3 ruch = transform.right * ruchX + transform.forward * ruchZ;
 
         if(monitorSC.interakcja == false 
-        && monitorCRT.interakcja == false)
+        && monitorCRT.interakcja == false
+        && laktok.interakcja == false
+        && kalendarz.interakcja == false)
         {
             controller.Move(ruch * predkosc_ruchu * Time.deltaTime);
         }
