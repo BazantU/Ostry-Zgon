@@ -51,7 +51,7 @@ public class CRTInterakcja : MonoBehaviour
             delay = 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape)
+        if(Input.GetKeyDown(KeyCode.Q)
             && interakcja == true)
         {   
             kamera_glowna.SetActive(true); kamera_monitor.SetActive(false);

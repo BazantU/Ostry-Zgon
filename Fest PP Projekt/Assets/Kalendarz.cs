@@ -37,7 +37,7 @@ public class Kalendarz : MonoBehaviour
             kamera_glowna.SetActive(false); kamera_kalendarz.SetActive(true);
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape)
+        if(Input.GetKeyDown(KeyCode.Q)
             && interakcja == true)
         {   
             kamera_glowna.SetActive(true); kamera_kalendarz.SetActive(false);
