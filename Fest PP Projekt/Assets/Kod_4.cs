@@ -25,6 +25,9 @@ public class Kod_4 : MonoBehaviour
     private string kod = "";
     private float poczatkowy_x;
 
+    public AudioSource zly_kod;
+    public AudioSource przycisk_press;
+
     private void info_koniec()
     {
         koniec.enabled = true;
@@ -82,12 +85,14 @@ public class Kod_4 : MonoBehaviour
                     || n == "7" 
                     || n == "8" 
                     || n == "9")
-                {
+                {   
+                    przycisk_press.Play();
                     kod += n;
                     tekst.text = kod;
                 }
                 if(n == "Reset")
-                {
+                {   
+                    przycisk_press.Play();
                     kod = "";
                     tekst.text = kod;
                 }
@@ -96,8 +101,10 @@ public class Kod_4 : MonoBehaviour
                     if(tekst.text == prawidlowy_kod.ToString())
                     {   
                         mozna_wpisac = false;
+                        //przycisk_press.Play();
                         kod = "";
                         tekst.text = "";
+                        
                         DOTween.Init();
                         tlo.DOColor(Color.green, 0.5f);
 
@@ -111,6 +118,7 @@ public class Kod_4 : MonoBehaviour
                     {
                         kod = "";
                         tekst.text = "";
+                        zly_kod.Play();
                         DOTween.Init();
                         tlo.DOColor(Color.red, 0.5f).OnComplete(obraz_kolor);
                     }

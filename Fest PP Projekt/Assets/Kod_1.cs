@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,10 @@ public class Kod_1 : MonoBehaviour
     private Color poczatkowy_kolor = new Color(93f/255f, 207f/255f, 255f/255f);
     private string kod = "";
     private float poczatkowy_x;
+
+    public AudioSource dzwiek_drzwi;
+    public AudioSource zly_kod;
+    public AudioSource przycisk_press;
 
     private void powrot(Transform przycisk_0)
     {
@@ -64,31 +69,40 @@ public class Kod_1 : MonoBehaviour
                     || n == "7" 
                     || n == "8" 
                     || n == "9")
-                {
+                {   
+                    przycisk_press.Play();
                     kod += n;
                     tekst.text = kod;
                 }
                 if(n == "Reset")
-                {
+                {   
+                    przycisk_press.Play();
                     kod = "";
                     tekst.text = kod;
                 }
                 if(n == "Zatwierdz")
                 {   
                     if(tekst.text == prawidlowy_kod.ToString())
-                    {   
+                    {      
                         mozna_wpisac = false;
+                        przycisk_press.Play();
                         kod = "";
                         tekst.text = "";
                         DOTween.Init();
                         tlo.DOColor(Color.green, 0.5f);
+
+                        dzwiek_drzwi.Play();
+
                         DOTween.Init();
-                        zawias.DOLocalRotate(new Vector3(0f, 125f, 0), 2f);
+                        zawias.DOLocalRotate(new Vector3(0f, 125f, 0), 2f); 
                     }
                     else
                     {
                         kod = "";
                         tekst.text = "";
+
+                        zly_kod.Play();
+
                         DOTween.Init();
                         tlo.DOColor(Color.red, 0.5f).OnComplete(obraz_kolor);
                     }

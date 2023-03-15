@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ruch : MonoBehaviour
-{
+{   
     public CharacterController controller;
     public float predkosc_ruchu;
     public float sila_grawitacji;
@@ -22,14 +22,7 @@ public class Ruch : MonoBehaviour
         float ruchZ = Input.GetAxis("Vertical");
 
         if(controller.isGrounded && predkosc_spadania.y < 0)
-        {
-            predkosc_spadania.y = -2f;
-        }
-
-        //if(controller.isGrounded && Input.GetButtonDown("Jump"))
-        //{
-            //predkosc_spadania.y = sila_skoku;
-        //}
+        {predkosc_spadania.y = -2f;}
         
         Vector3 ruch = transform.right * ruchX + transform.forward * ruchZ;
 
@@ -43,5 +36,7 @@ public class Ruch : MonoBehaviour
             
         predkosc_spadania.y += sila_grawitacji * Time.deltaTime;
         controller.Move(predkosc_spadania * Time.deltaTime);
+
+        //if(controller.isGrounded && Input.GetButtonDown("Jump")){predkosc_spadania.y = sila_skoku;}
     }
 }

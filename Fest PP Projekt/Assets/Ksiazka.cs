@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Ksiazka : MonoBehaviour
     public Transform ksiazka;
     public float odleglosc;
     public bool otwarta = false;
+    public AudioSource dzwiek;
 
     void Update()
     {
@@ -22,6 +24,7 @@ public class Ksiazka : MonoBehaviour
             && hit.distance <= odleglosc)
         {   
             otwarta = true;
+            dzwiek.Play();
 
             DOTween.Init();
             ksiazka.DOLocalRotate(new Vector3(0f, 360f, 0f), 1f);

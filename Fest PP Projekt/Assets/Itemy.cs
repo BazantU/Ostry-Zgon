@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class Itemy : MonoBehaviour
     private List<GameObject> przedmioty_lista = new List<GameObject>(); 
     public float odleglosc;
     private bool trzyma_przedmiot = false;
+
+    public AudioSource zrodlo;
+    public AudioClip kartki;
+    public AudioClip item_inne;
 
     void Update()
     {
@@ -54,12 +59,17 @@ public class Itemy : MonoBehaviour
             || item.name == "annn"
             || item.name == "re"
             || item.name == "gm")
-            {reka_gracza.localRotation = Quaternion.Euler(-90f, 0f, 0f);}
+            {reka_gracza.localRotation = Quaternion.Euler(-90f, 0f, 0f); zrodlo.clip = kartki; zrodlo.pitch = 1.5f; zrodlo.volume = 0.8f; zrodlo.Play();}
 
             if(item.name == "kartkasejf"
-            || item.name == "jaszczomb3"
             || item.name == "werre")
-            {reka_gracza.localRotation = Quaternion.Euler(-90f, 180f, 0f);}
+            {reka_gracza.localRotation = Quaternion.Euler(-90f, 180f, 0f); zrodlo.clip = kartki; zrodlo.pitch = 1.5f; zrodlo.volume = 0.8f; zrodlo.Play();}
+
+            if(item.name == "jaszczomb3")
+            {reka_gracza.localRotation = Quaternion.Euler(-90f, 180f, 0f); zrodlo.clip = item_inne; zrodlo.pitch = 1f; zrodlo.volume = 1f; zrodlo.Play();}
+
+            if(item.name == "papiezkubek")
+            {zrodlo.clip = item_inne; zrodlo.pitch = 1f; zrodlo.volume = 1f; zrodlo.Play();}
 
             if(item.name == "Jagiello"
             || item.name == "Wielkie_czyny"
@@ -68,11 +78,12 @@ public class Itemy : MonoBehaviour
             || item.name == "Rybak"
             || item.name == "Chrobry")
             {reka_gracza.localRotation = Quaternion.Euler(180f, 0f, 180f);
-            reka_gracza.localPosition = new Vector3(0.474f, -0.234f, 0.964f);} //-0.234
+            reka_gracza.localPosition = new Vector3(0.474f, -0.234f, 0.964f);
+            zrodlo.clip = item_inne; zrodlo.pitch = 1f; zrodlo.volume = 1f; zrodlo.Play();} //-0.234
 
             if(item.name == "xxx5"
             || item.name == "kawalek_kodu")
-            {reka_gracza.localRotation = Quaternion.Euler(90f, 0f, 180f);}
+            {reka_gracza.localRotation = Quaternion.Euler(90f, 0f, 180f); zrodlo.clip = kartki; zrodlo.pitch = 1.5f; zrodlo.volume = 0.8f; zrodlo.Play();}
         }
 
         if(Input.GetKeyDown(KeyCode.Q) && trzyma_przedmiot == true)

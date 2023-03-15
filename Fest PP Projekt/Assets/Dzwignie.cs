@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,8 @@ public class Dzwignie : MonoBehaviour
 
     public bool dozwolona_interakcja = true;
     public Transform drzwi_sejfiku;
+    public AudioSource dzwiek;
+    public AudioSource wygrana;
 
     void Start()
     {   
@@ -139,12 +142,15 @@ public class Dzwignie : MonoBehaviour
             if(obiekt.name == Dz3.name){stan_dz3 = !stan_dz3;}
             if(obiekt.name == Dz4.name){stan_dz4 = !stan_dz4; stan_dz1 = !stan_dz1; stan_dz2 = !stan_dz2; stan_dz3 = !stan_dz3;}
 
+            dzwiek.Play();
+
             if(stan_dz1 == true
             && stan_dz2 == false
             && stan_dz3 == false
             && stan_dz4 == false)
             {   
                 dozwolona_interakcja = false;
+                wygrana.Play();
                 DOTween.Init();
                 kolor_led.DOColor(Color.green, 0.5f);
                 DOTween.Init();

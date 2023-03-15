@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class Laktok : MonoBehaviour
     public bool mozna_pisac = true;
 
     public RawImage strona_img;
+    public AudioSource dzwiek;
 
     void Start()
     {   
@@ -129,7 +131,8 @@ public class Laktok : MonoBehaviour
                             //interakcja = false;
                         }
                         else
-                        {
+                        {   
+                            dzwiek.Play();
                             kod = "";
                             tekst.text = kod;
                         }

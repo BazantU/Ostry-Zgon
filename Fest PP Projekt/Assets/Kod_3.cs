@@ -19,6 +19,10 @@ public class Kod_3 : MonoBehaviour
     private string kod = "";
     private float poczatkowy_x;
 
+    public AudioSource dzwiek_drzwi;
+    public AudioSource zly_kod;
+    public AudioSource przycisk_press;
+
     private void powrot(Transform przycisk_0)
     {
         DOTween.Init();
@@ -64,12 +68,14 @@ public class Kod_3 : MonoBehaviour
                     || n == "7" 
                     || n == "8" 
                     || n == "9")
-                {
+                {   
+                    przycisk_press.Play();
                     kod += n;
                     tekst.text = kod;
                 }
                 if(n == "Reset")
-                {
+                {   
+                    przycisk_press.Play();
                     kod = "";
                     tekst.text = kod;
                 }
@@ -78,8 +84,10 @@ public class Kod_3 : MonoBehaviour
                     if(tekst.text == prawidlowy_kod.ToString())
                     {   
                         mozna_wpisac = false;
+                        przycisk_press.Play();
                         kod = "";
                         tekst.text = "";
+                        dzwiek_drzwi.Play();
                         DOTween.Init();
                         tlo.DOColor(Color.green, 0.5f);
                         DOTween.Init();
@@ -89,6 +97,7 @@ public class Kod_3 : MonoBehaviour
                     {
                         kod = "";
                         tekst.text = "";
+                        zly_kod.Play();
                         DOTween.Init();
                         tlo.DOColor(Color.red, 0.5f).OnComplete(obraz_kolor);
                     }
